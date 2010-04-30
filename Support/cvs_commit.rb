@@ -96,7 +96,7 @@ mup.html {
 		if commit_paths.empty?
 			mup.div( "class" => "info" ) {
 				mup.text! "File(s) not modified; nothing to commit."
-				mup.ul{ unknown_paths.keys.each { |path| mup.li(path) } }
+				mup.ul{ unknown_paths.each { |path| mup.li(path) } }
 			}
 			exit 0
 		end

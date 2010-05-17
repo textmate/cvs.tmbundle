@@ -84,7 +84,7 @@ mup.html {
 		unless conflict_paths.empty?
 			mup.div( "class" => "error" ) {
 				mup.text! "Cannot continue; there are merge conflicts in files:"		
-				mup.ul{ conflict_paths.keys.each { |path| mup.li(path) } }
+				mup.ul{ conflict_paths.each { |path| mup.li(path) } }
 				mup.text! "Canceled."
 			}	
 			exit -1

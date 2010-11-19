@@ -36,7 +36,7 @@ if [[ $revs = "false" ]]; then
 fi
 
 export REVS="$revs"
-"${TM_RUBY:-ruby}" &lt;&lt;'END'
+ruby &lt;&lt;'END'
 
 ENV['CVS_PATH'] = ENV['TM_CVS']
 $LOAD_PATH &lt;&lt; ENV['TM_BUNDLE_SUPPORT']

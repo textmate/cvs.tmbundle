@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>require_cmd "${TM_CVS:=cvs}" "If you have installed cvs, then you need to either update your &lt;tt&gt;PATH&lt;/tt&gt; or set the &lt;tt&gt;TM_CVS&lt;/tt&gt; shell variable (e.g. in Preferences / Advanced)"
+	<string>#!/usr/bin/env bash
 
 ruby -r "$TM_SUPPORT_PATH/lib/shelltokenize.rb" &lt;&lt;END
   cvs = ENV['TM_CVS'] || "cvs"
@@ -15,13 +15,35 @@ ruby -r "$TM_SUPPORT_PATH/lib/shelltokenize.rb" &lt;&lt;END
 END</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^Z</string>
 	<key>name</key>
 	<string>Add to Repository</string>
-	<key>output</key>
-	<string>showAsTooltip</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>cvs</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/cvs</string>
+				<string>/usr/local/bin/cvs</string>
+			</array>
+			<key>variable</key>
+			<string>TM_CVS</string>
+		</dict>
+	</array>
 	<key>uuid</key>
 	<string>ADCD4FCD-D39D-41B3-88D0-84C5BE115535</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

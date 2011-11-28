@@ -1,6 +1,6 @@
 require 'English' # you are angry, english!
 
-cvs				= ENV['TM_CVS']
+cvs				= ENV['TM_CVS'] || 'cvs' unless defined?(TM_CVS)
 #commit_paths	= ENV['CommitPaths']
 commit_tool		= ENV['CommitWindow']
 bundle			= ENV['TM_BUNDLE_SUPPORT']

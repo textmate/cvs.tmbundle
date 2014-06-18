@@ -37,7 +37,7 @@ if [[ $revs = "false" ]]; then
 fi
 
 export REVS="$revs"
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby &lt;&lt;'END'
+ruby18 &lt;&lt;'END'
 
 ENV['CVS_PATH'] = ENV['TM_CVS']
 $LOAD_PATH &lt;&lt; ENV['TM_BUNDLE_SUPPORT']

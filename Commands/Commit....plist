@@ -10,7 +10,7 @@
 export CommitWindow="$TM_SUPPORT_PATH/bin/CommitWindow.app/Contents/MacOS/CommitWindow"
 
 cd "${TM_PROJECT_DIRECTORY:-$TM_DIRECTORY}"
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby -- "${TM_BUNDLE_SUPPORT}/cvs_commit.rb"</string>
+ruby18 -- "${TM_BUNDLE_SUPPORT}/cvs_commit.rb"</string>
 	<key>input</key>
 	<string>none</string>
 	<key>inputFormat</key>

@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/usr/bin/env bash
 
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby -r "$TM_SUPPORT_PATH/lib/shelltokenize.rb" &lt;&lt;END
+ruby18 -r "$TM_SUPPORT_PATH/lib/shelltokenize.rb" &lt;&lt;END
   cvs = ENV['TM_CVS'] || "cvs"
   TextMate.selected_paths_array.each do |path|
     puts %x{cd "#{File.dirname path}" &amp;&amp; #{cvs} add "#{File.basename path}"}
